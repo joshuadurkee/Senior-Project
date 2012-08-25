@@ -11,12 +11,27 @@ public class StartCubeGrow : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		if (Input.GetMouseButtonDown(0)) {
+		if (Input.GetMouseButtonDown(0))
+		{
 			RaycastHit hit;
-			if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5)) {
-				if (hit.collider.gameObject.tag == "Cube") {
-					hit.collider.gameObject.GetComponent<CubeGrow>().growing = true;
-						//GameObject.Find("game_controller").GetComponent(script_scene_manager).lives -= 1;
+			if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5))
+			{
+				if (hit.collider.gameObject.tag == "Cube")
+				{
+					hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
+					hit.collider.gameObject.animation.Play("GrowX+");
+				}
+			}
+		}
+		
+		if (Input.GetMouseButtonDown(1))
+		{
+			RaycastHit hit;
+			if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5))
+			{
+				if (hit.collider.gameObject.tag == "Cube")
+				{
+					hit.collider.gameObject.GetComponent<CubeGrow>().scale = 0;
 				}
 			}
 		}

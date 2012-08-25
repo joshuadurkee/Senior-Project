@@ -3,20 +3,26 @@ using System.Collections;
 
 public class CubeGrow : MonoBehaviour {
 	
-	public bool growing = false;
+	public float scale;
+	public bool grown;
 	
 	// Use this for initialization
 	void Start () {
-		this.gameObject.transform.localScale = new Vector3(0,1,1);
-		//this.gameObject.collider.transform.localScale = new Vector3(1,1,1);
-	
+		scale = 0;
+		//this.gameObject.transform.localScale = new Vector3(0,1,1);
+		//this.gameObject.animation.Play("GrowX+");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(this.gameObject.transform.localScale.x < 1 && growing == true)
+		/*if(this.gameObject.transform.localScale.x < scale)
 		{
 			this.gameObject.transform.localScale += new Vector3(0.01F,0,0);
 		}
+		
+		if(this.gameObject.transform.localScale.x > scale)
+		{
+			this.gameObject.transform.localScale -= new Vector3(0.01F,0,0);
+		}*/
 	}
 }
