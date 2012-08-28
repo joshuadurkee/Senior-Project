@@ -18,7 +18,7 @@ public class StartCubeGrow : MonoBehaviour {
 			{
 				if (hit.collider.gameObject.tag == "Cube")
 				{
-					hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
+					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
 					hit.collider.gameObject.animation.Play("GrowX+");
 				}
 			}
@@ -31,7 +31,8 @@ public class StartCubeGrow : MonoBehaviour {
 			{
 				if (hit.collider.gameObject.tag == "Cube")
 				{
-					hit.collider.gameObject.GetComponent<CubeGrow>().scale = 0;
+					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 0;
+					hit.collider.gameObject.animation.Play("ShrinkX+");
 				}
 			}
 		}
