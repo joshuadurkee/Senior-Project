@@ -16,10 +16,35 @@ public class StartCubeGrow : MonoBehaviour {
 			RaycastHit hit;
 			if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5))
 			{
-				if (hit.collider.gameObject.tag == "Cube")
+				if (hit.collider.gameObject.tag == "CubeSideX+")
 				{
 					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
-					hit.collider.gameObject.animation.Play("GrowX+");
+					hit.collider.gameObject.transform.parent.animation.Play("GrowX+");
+				}
+				if (hit.collider.gameObject.tag == "CubeSideX-")
+				{
+					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
+					hit.collider.gameObject.transform.parent.animation.Play("GrowX-");
+				}
+				if (hit.collider.gameObject.tag == "CubeSideY+")
+				{
+					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
+					hit.collider.gameObject.transform.parent.animation.Play("GrowY+");
+				}
+				if (hit.collider.gameObject.tag == "CubeSideY-")
+				{
+					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
+					hit.collider.gameObject.transform.parent.animation.Play("GrowY-");
+				}
+				if (hit.collider.gameObject.tag == "CubeSideZ+")
+				{
+					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
+					hit.collider.gameObject.transform.parent.animation.Play("GrowZ+");
+				}
+				if (hit.collider.gameObject.tag == "CubeSideZ-")
+				{
+					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
+					hit.collider.gameObject.transform.parent.animation.Play("GrowZ-");
 				}
 			}
 		}
@@ -29,10 +54,35 @@ public class StartCubeGrow : MonoBehaviour {
 			RaycastHit hit;
 			if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5))
 			{
-				if (hit.collider.gameObject.tag == "Cube")
+				if (hit.collider.gameObject.tag == "CubeSideX+")
 				{
-					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 0;
-					hit.collider.gameObject.animation.Play("ShrinkX+");
+					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
+					hit.collider.gameObject.transform.parent.animation.Play("ShrinkX+");
+				}
+				if (hit.collider.gameObject.tag == "CubeSideX-")
+				{
+					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
+					hit.collider.gameObject.transform.parent.animation.Play("ShrinkX-");
+				}
+				if (hit.collider.gameObject.tag == "CubeSideY+")
+				{
+					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
+					hit.collider.gameObject.transform.parent.animation.Play("ShrinkY+");
+				}
+				if (hit.collider.gameObject.tag == "CubeSideY-")
+				{
+					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
+					hit.collider.gameObject.transform.parent.animation.Play("ShrinkY-");
+				}
+				if (hit.collider.gameObject.tag == "CubeSideZ+")
+				{
+					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
+					hit.collider.gameObject.transform.parent.animation.Play("ShrinkZ+");
+				}
+				if (hit.collider.gameObject.tag == "CubeSideZ-")
+				{
+					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
+					hit.collider.gameObject.transform.parent.animation.Play("ShrinkZ-");
 				}
 			}
 		}
