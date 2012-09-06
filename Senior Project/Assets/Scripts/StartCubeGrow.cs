@@ -14,7 +14,8 @@ public class StartCubeGrow : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0))
 		{
 			RaycastHit hit;
-			if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5))
+			Ray ray = camera.ScreenPointToRay(new Vector3(camera.pixelWidth/2, camera.pixelHeight/2, 0));
+			if (Physics.Raycast(ray, out hit, 10))
 			{
 				if (hit.collider.gameObject.tag == "CubeSideX+")
 				{
