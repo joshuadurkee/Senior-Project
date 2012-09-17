@@ -23,28 +23,38 @@ public class StartCubeGrow : MonoBehaviour {
 				if (hit.collider.gameObject.tag == "CubeSideX+")
 				{
 					//hit.collider.gameObject.transform.parent.animation.Play("GrowX+");
-					GameObject newCube = Instantiate(cube, this.transform.position, Quaternion.identity) as GameObject;
-					newCube.transform.position += new Vector3(5,0,0);
+					GameObject newCube = Instantiate(cube, hit.collider.gameObject.transform.parent.transform.position, Quaternion.identity) as GameObject;
+					newCube.transform.position += new Vector3(2,0,0);
 				}
 				if (hit.collider.gameObject.tag == "CubeSideX-")
 				{
-					hit.collider.gameObject.transform.parent.animation.Play("GrowX-");
+					//hit.collider.gameObject.transform.parent.animation.Play("GrowX-");
+					GameObject newCube = Instantiate(cube, hit.collider.gameObject.transform.parent.transform.position, Quaternion.identity) as GameObject;
+					newCube.transform.position += new Vector3(-2,0,0);
 				}
 				if (hit.collider.gameObject.tag == "CubeSideY+")
 				{
-					hit.collider.gameObject.transform.parent.animation.Play("GrowY+");
+					//hit.collider.gameObject.transform.parent.animation.Play("GrowY+");
+					GameObject newCube = Instantiate(cube, hit.collider.gameObject.transform.parent.transform.position, Quaternion.identity) as GameObject;
+					newCube.transform.position += new Vector3(0,2,0);
 				}
 				if (hit.collider.gameObject.tag == "CubeSideY-")
 				{
-					hit.collider.gameObject.transform.parent.animation.Play("GrowY-");
+					//hit.collider.gameObject.transform.parent.animation.Play("GrowY-");
+					GameObject newCube = Instantiate(cube, hit.collider.gameObject.transform.parent.transform.position, Quaternion.identity) as GameObject;
+					newCube.transform.position += new Vector3(0,-2,0);
 				}
 				if (hit.collider.gameObject.tag == "CubeSideZ+")
 				{
-					hit.collider.gameObject.transform.parent.animation.Play("GrowZ+");
+					//hit.collider.gameObject.transform.parent.animation.Play("GrowZ+");
+					GameObject newCube = Instantiate(cube, hit.collider.gameObject.transform.parent.transform.position, Quaternion.identity) as GameObject;
+					newCube.transform.position += new Vector3(0,0,2);
 				}
 				if (hit.collider.gameObject.tag == "CubeSideZ-")
 				{
-					hit.collider.gameObject.transform.parent.animation.Play("GrowZ-");
+					//hit.collider.gameObject.transform.parent.animation.Play("GrowZ-");
+					GameObject newCube = Instantiate(cube, hit.collider.gameObject.transform.parent.transform.position, Quaternion.identity) as GameObject;
+					newCube.transform.position += new Vector3(0,0,-2);
 				}
 			}
 		}
@@ -56,33 +66,33 @@ public class StartCubeGrow : MonoBehaviour {
 			{
 				if (hit.collider.gameObject.tag == "CubeSideX+")
 				{
-					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
-					hit.collider.gameObject.transform.parent.animation.Play("ShrinkX+");
+					//hit.collider.gameObject.transform.parent.animation.Play("ShrinkX+");
+					Destroy (hit.collider.gameObject.transform.parent.gameObject);
 				}
 				if (hit.collider.gameObject.tag == "CubeSideX-")
 				{
-					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
-					hit.collider.gameObject.transform.parent.animation.Play("ShrinkX-");
+					//hit.collider.gameObject.transform.parent.animation.Play("ShrinkX-");
+					Destroy (hit.collider.gameObject.transform.parent.gameObject);
 				}
 				if (hit.collider.gameObject.tag == "CubeSideY+")
 				{
-					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
-					hit.collider.gameObject.transform.parent.animation.Play("ShrinkY+");
+					//hit.collider.gameObject.transform.parent.animation.Play("ShrinkY+");
+					Destroy (hit.collider.gameObject.transform.parent.gameObject);
 				}
 				if (hit.collider.gameObject.tag == "CubeSideY-")
 				{
-					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
-					hit.collider.gameObject.transform.parent.animation.Play("ShrinkY-");
+					//hit.collider.gameObject.transform.parent.animation.Play("ShrinkY-");
+					Destroy (hit.collider.gameObject.transform.parent.gameObject);
 				}
 				if (hit.collider.gameObject.tag == "CubeSideZ+")
 				{
-					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
-					hit.collider.gameObject.transform.parent.animation.Play("ShrinkZ+");
+					//hit.collider.gameObject.transform.parent.animation.Play("ShrinkZ+");
+					Destroy (hit.collider.gameObject.transform.parent.gameObject);
 				}
 				if (hit.collider.gameObject.tag == "CubeSideZ-")
 				{
-					//hit.collider.gameObject.GetComponent<CubeGrow>().scale = 1;
-					hit.collider.gameObject.transform.parent.animation.Play("ShrinkZ-");
+					//hit.collider.gameObject.transform.parent.animation.Play("ShrinkZ-");
+					Destroy (hit.collider.gameObject.transform.parent.gameObject);
 				}
 			}
 		}
