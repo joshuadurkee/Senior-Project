@@ -1,0 +1,7 @@
+# Ignore these files and folders
+*
+
+# Ignore data and junk files
+
+# Recognise these files in previously ignored locations
+!Assets/*
