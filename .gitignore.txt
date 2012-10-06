@@ -1,7 +1,7 @@
 # Ignore these files and folders
-/*
+Senior Project/*
 
 # Ignore data and junk files
 
 # Recognise these files in previously ignored locations
-!Assets/*
+!Senior Project/Assets/*
