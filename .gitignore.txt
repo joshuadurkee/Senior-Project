@@ -1,5 +1,5 @@
 # Ignore these files and folders
-*
+/*
 
 # Ignore data and junk files
 
