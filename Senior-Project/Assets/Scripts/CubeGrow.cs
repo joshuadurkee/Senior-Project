@@ -7,34 +7,38 @@ public class CubeGrow : MonoBehaviour {
 	public Animation grow;
 	public Animation shrink;
 	public GameObject newCube;
+	public GameObject player;
+	public bool destructable;
 	
 	// Use this for initialization
 	void Start () {
-		//scale = 0;
-		//this.gameObject.transform.localScale = new Vector3(0,1,1);
-		//this.gameObject.animation.Play("GrowX+");
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		/*if(this.gameObject.transform.localScale.x < scale)
-		{
-			this.gameObject.transform.localScale += new Vector3(0.01F,0,0);
-		}
 		
-		if(this.gameObject.transform.localScale.x > scale)
-		{
-			this.gameObject.transform.localScale -= new Vector3(0.01F,0,0);
-		}*/
 	}
 	
 	void growNewCube()
 	{
-		Instantiate(newCube, this.gameObject.transform.parent.position + offset, Quaternion.identity);
+		if(!(player.transform.position.x > (this.gameObject.transform.parent.position + offset).x - 2 &
+			 player.transform.position.x < (this.gameObject.transform.parent.position + offset).x + 2 &
+			 player.transform.position.y > (this.gameObject.transform.parent.position + offset).y - 2 &
+			 player.transform.position.y < (this.gameObject.transform.parent.position + offset).y + 2 &
+			 player.transform.position.z > (this.gameObject.transform.parent.position + offset).z - 2 &
+			 player.transform.position.z < (this.gameObject.transform.parent.position + offset).z + 2 ))
+		{
+			Instantiate(newCube, this.gameObject.transform.parent.position + offset, Quaternion.identity);
+		}
+		else { print("Fail"); }
 	}
 	
 	void shrinkCube()
 	{
-		Destroy(this.gameObject.transform.parent.gameObject);
+		if(destructable)
+		{
+			Destroy(this.gameObject.transform.parent.gameObject);
+		}
 	}
 }
