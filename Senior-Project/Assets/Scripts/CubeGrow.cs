@@ -12,7 +12,7 @@ public class CubeGrow : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -22,16 +22,17 @@ public class CubeGrow : MonoBehaviour {
 	
 	void growNewCube()
 	{
-		if(!(player.transform.position.x > (this.gameObject.transform.parent.position + offset).x - 2 &
-			 player.transform.position.x < (this.gameObject.transform.parent.position + offset).x + 2 &
-			 player.transform.position.y > (this.gameObject.transform.parent.position + offset).y - 2 &
-			 player.transform.position.y < (this.gameObject.transform.parent.position + offset).y + 2 &
-			 player.transform.position.z > (this.gameObject.transform.parent.position + offset).z - 2 &
-			 player.transform.position.z < (this.gameObject.transform.parent.position + offset).z + 2 ))
+		if( player.transform.position.x < (this.gameObject.transform.parent.position + offset).x - 2 |
+			player.transform.position.x > (this.gameObject.transform.parent.position + offset).x + 2 |
+			player.transform.position.y < (this.gameObject.transform.parent.position + offset).y - 2 |
+			player.transform.position.y > (this.gameObject.transform.parent.position + offset).y + 2 |
+			player.transform.position.z < (this.gameObject.transform.parent.position + offset).z - 2 |
+			player.transform.position.z > (this.gameObject.transform.parent.position + offset).z + 2 )
 		{
 			Instantiate(newCube, this.gameObject.transform.parent.position + offset, Quaternion.identity);
+//			print ("success");
 		}
-		else { print("Fail"); }
+//		else { print("Fail"); }
 	}
 	
 	void shrinkCube()
